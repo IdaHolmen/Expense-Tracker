@@ -1,14 +1,12 @@
-import StartPage from '../StartPage/StartPage'
-import './App.css'
+import StartPage from '../StartPage/StartPage';
+import './App.css';
 
 function App() {
-
-
   return (
     <>
-      <StartPage/>
+      <StartPage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
