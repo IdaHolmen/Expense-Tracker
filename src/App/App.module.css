@@ -1,0 +1,32 @@
+.main_container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.budget_container {
+	background-color: #6dbe6c;
+	width: 100%;
+	flex-basis: 25%;
+	padding: 1rem;
+}
+
+.header {
+	margin: 2rem;
+}
+
+.balance {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.money_bag {
+	font-size: 3.5rem;
+}
+
+.navigation_button_container {
+	flex-basis: 75%;
+}
