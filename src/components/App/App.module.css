@@ -15,6 +15,7 @@
 
 .header {
 	margin: 2rem;
+	font-size: 1.4rem;
 }
 
 .balance {
@@ -23,10 +24,14 @@
 	justify-content: space-around;
 }
 
-.money_bag {
+.header_icon {
 	font-size: 3.5rem;
 }
 
 .navigation_button_container {
 	flex-basis: 75%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 }

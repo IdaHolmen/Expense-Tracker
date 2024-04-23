@@ -1,0 +1,22 @@
+.log_expenses_button_container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.log_expenses_button {
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	transition: font-weight 0.2s ease;
+}
+
+.log_expenses_button img {
+	width: 2rem;
+	margin-right: 1rem;
+}
+
+.log_expenses_button:hover {
+	color: #6dbe6c;
+	font-weight: bold;
+}

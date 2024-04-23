@@ -1,5 +1,5 @@
 import React from 'react';
-import setBudgetImage from '../assets/hand-holding-dollar-light.svg';
+import setBudgetImage from '../../assets/hand-holding-dollar-light.svg';
 import styles from './SetBudget.module.css';
 
 const SetBudget = () => {

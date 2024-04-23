@@ -8,9 +8,15 @@
 	font-size: 1.5rem;
 	display: flex;
 	align-items: center;
+	transition: font-weight 0.2s ease;
 }
 
 .set_budget_button img {
 	width: 2rem;
-	margin-right: 0.5rem;
+	margin-right: 1rem;
+}
+
+.set_budget_button:hover {
+	color: #6dbe6c;
+	font-weight: bold;
 }
