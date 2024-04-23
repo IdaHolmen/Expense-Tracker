@@ -1,0 +1,16 @@
+.reusable_button {
+	width: 10rem;
+	height: 2rem;
+	font-weight: bold;
+	color: white;
+	background-color: #9747ff;
+	border-radius: 15px;
+}
+
+.reusable_button:hover {
+	background-color: #b47aff;
+}
+
+.reusable_button:active {
+	background-color: #6029a9;
+}
