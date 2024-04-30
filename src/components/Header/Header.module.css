@@ -1,0 +1,14 @@
+.header {
+	margin: 2rem;
+	font-size: 1.4rem;
+}
+
+.balance {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.header_icon {
+	font-size: 3.5rem;
+}

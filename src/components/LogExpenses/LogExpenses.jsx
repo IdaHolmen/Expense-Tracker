@@ -10,6 +10,8 @@ const LogExpenses = () => {
 	const [expenseList, setExpenseList] = useState([]);
 	const expenseForm = useRef(null);
 
+	const [errorMessages, setErrorMessages] = useState({});
+
 	const toggleExpenses = () => {
 		setIsLogExpensesOpen(!isLogExpensesOpen);
 	};
@@ -21,9 +23,20 @@ const LogExpenses = () => {
 		newExpense = Object.fromEntries(expenseFormData.entries());
 		setExpenseList((prev) => [...prev, newExpense]);
 		expenseForm.current.reset();
+		toggleExpenses();
 	};
 
 	console.log(expenseList);
+
+	const validateInput = (inputName, inputValue) => {
+		const clonedErrors = {...errorMessages};
+
+		if (inputName === 'title') {
+			clonedErrors.titleError = !inputValue.trim()
+				? 'Expense title is required!'
+				: '';
+		}
+	};
 
 	return (
 		<>
@@ -54,10 +67,10 @@ const LogExpenses = () => {
 							</button>
 						</div>
 						<div className={styles.expense_form_element}>
-							<label htmlFor='name'>
+							<label htmlFor='title'>
 								<b>What</b> should your expense be called?
 							</label>
-							<input type='text' name='name' />
+							<input type='text' name='title' />
 							<p>Error</p>
 						</div>
 						<div className={styles.expense_form_element}>
@@ -87,7 +100,7 @@ const LogExpenses = () => {
 							</select>
 						</div>
 						<div className={styles.expense_form_element}>
-							<ReusableButton buttonText={'Add Expense'} />
+							<ReusableButton buttonText={'Add Expense'} type='submit' />
 							<p>Expense added! ✅</p>
 						</div>
 					</div>

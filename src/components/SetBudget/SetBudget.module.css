@@ -20,3 +20,63 @@
 	color: #6dbe6c;
 	font-weight: bold;
 }
+
+.set_budget_container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.set_budget_form {
+	height: 50%;
+	width: 95%;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+}
+
+.set_budget_header {
+	flex-basis: 10%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+
+.exit_button_image {
+	width: 2rem;
+	height: 2rem;
+	margin: 0.5rem;
+	transition: background-color 0.2s ease;
+	border-radius: 50%;
+}
+
+.exit_button_image:hover {
+	background-color: #c04c4c75;
+	border-radius: 50%;
+}
+
+.set_budget_main {
+	flex-basis: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.set_budget_label {
+	margin-bottom: 1rem;
+}
+
+.set_budget_main input {
+	width: 80%;
+	margin: 0 auto;
+	padding-left: 0.3rem;
+}
