@@ -13,7 +13,6 @@ function App() {
 	const [isSetBudgetOpen, setIsSetBudgetOpen] = useState(false);
 	const [budgetAmount, setBudgetAmount] = useState(0);
 	const [inputValue, setInputValue] = useState('');
-	const [isAddExpenseOpen, setIsAddExpenseOpen] = useState(false);
 
 	//BUDGET PORTION
 	const toggleSetBudget = () => {

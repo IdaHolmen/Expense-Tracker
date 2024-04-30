@@ -1,5 +1,6 @@
 import React from 'react';
 import logExpensesImage from '../../assets/plus-regular.svg';
+import exitButtonImage from '../../assets/circle-xmark-light.svg';
 import styles from './LogExpenses.module.css';
 import {useState, useRef} from 'react';
 import ReusableButton from '../ReusableButton/ReusableButton';
@@ -39,33 +40,57 @@ const LogExpenses = () => {
 					onSubmit={handleSubmit}
 					ref={expenseForm}
 				>
-					<div>
-						<label htmlFor='name'>
-							<b>What</b> should your expense be called?
-						</label>
-						<input type='text' name='name' />
-						<p>Error</p>
+					<div className={styles.form_elements_container}>
+						<div className={styles.expenses_header}>
+							<button
+								className={styles.exit_set_budget_button}
+								onClick={toggleExpenses}
+							>
+								<img
+									src={exitButtonImage}
+									alt='Exit Button'
+									className={styles.exit_button_image}
+								/>
+							</button>
+						</div>
+						<div className={styles.expense_form_element}>
+							<label htmlFor='name'>
+								<b>What</b> should your expense be called?
+							</label>
+							<input type='text' name='name' />
+							<p>Error</p>
+						</div>
+						<div className={styles.expense_form_element}>
+							<label htmlFor='amount'>
+								<b>How much</b> is the expense?
+							</label>
+							<input type='text' name='amount' />
+							<p>Error</p>
+						</div>
+						<div className={styles.expense_form_element}>
+							<label htmlFor='date'>
+								<b>When</b> did the purchase take place?
+							</label>
+							<input type='date' name='date' />
+							<p>Error</p>
+						</div>
+						<div className={styles.expense_form_element}>
+							<label htmlFor='category'>
+								<b>Which</b> category is the expense under?
+							</label>
+							<select name='category'>
+								<option value='housing'>Housing 🏠</option>
+								<option value='groceries'>Groceries 🍴</option>
+								<option value='transportation'>Transportation 🚲</option>
+								<option value='clothing'>Clothing 👕</option>
+								<option value='other'>Other 💃</option>
+							</select>
+						</div>
+						<div className={styles.expense_form_element}>
+							<ReusableButton buttonText={'Add Expense'} />
+							<p>Expense added! ✅</p>
+						</div>
 					</div>
-					<div>
-						<label htmlFor='amount'>
-							<b>How much</b> is the expense?
-						</label>
-						<input type='text' name='amount' />
-						<p>Error</p>
-					</div>
-					<div>
-						<label htmlFor='category'>
-							<b>Which</b> category is the expense under?
-						</label>
-						<select name='category'>
-							<option value='housing'>Housing 🏠</option>
-							<option value='groceries'>Groceries 🍴</option>
-							<option value='transportation'>Transportation 🚲</option>
-							<option value='clothing'>Clothing 👕</option>
-							<option value='other'>Other 💃</option>
-						</select>
-					</div>
-					<ReusableButton buttonText={'Add Expense'} />
 				</form>
 			)}
 		</>
