@@ -13,23 +13,28 @@ function App() {
 	const [isSetBudgetOpen, setIsSetBudgetOpen] = useState(false);
 	const [budgetAmount, setBudgetAmount] = useState(0);
 	const [inputValue, setInputValue] = useState('');
+	const [isAddExpenseOpen, setIsAddExpenseOpen] = useState(false);
 
+	//BUDGET PORTION
 	const toggleSetBudget = () => {
 		setIsSetBudgetOpen(!isSetBudgetOpen);
 	};
 
 	const handleAmountChange = (e) => {
 		setInputValue(e.target.value);
+		console.log(inputValue);
 	};
 
 	const addToBudget = () => {
 		const addedAmount = parseFloat(inputValue);
 		if (!isNaN(addedAmount)) {
+			console.log('Render Balance:', amount);
 			setBudgetAmount(budgetAmount + addedAmount);
 			setInputValue('');
 		}
 	};
 
+	// console.log('Render App:', {isSetBudgetOpen, budgetAmount, inputValue});
 	return (
 		<main className={styles.main_container}>
 			<section className={styles.budget_container}>
@@ -77,6 +82,7 @@ function App() {
 							<ReusableButton
 								buttonText='Add to budget'
 								onClick={addToBudget}
+								type='button'
 							/>
 						</div>
 					</div>
