@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import setBudgetImage from '../../assets/hand-holding-dollar-light.svg';
-import exitButtonImage from '../../assets/circle-xmark-light.svg';
 import styles from './SetBudget.module.css';
 import ReusableButton from '../ReusableButton/ReusableButton';
+import ExitButton from '../ExitButton/ExitButton';
 
 const SetBudget = ({updateBudgetAmount}) => {
 	const [isSetBudgetOpen, setIsSetBudgetOpen] = useState(false);
@@ -44,16 +44,7 @@ const SetBudget = ({updateBudgetAmount}) => {
 				<form className={styles.set_budget_container} onSubmit={addToBudget}>
 					<div className={styles.set_budget_form}>
 						<div className={styles.set_budget_header}>
-							<button
-								className={styles.exit_set_budget_button}
-								onClick={toggleSetBudget}
-							>
-								<img
-									src={exitButtonImage}
-									alt='Exit Button'
-									className={styles.exit_button_image}
-								/>
-							</button>
+							<ExitButton onClick={toggleSetBudget} />
 						</div>
 						<div className={styles.set_budget_main}>
 							<label htmlFor='amount' className={styles.set_budget_label}>

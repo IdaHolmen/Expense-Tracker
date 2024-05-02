@@ -1,9 +1,9 @@
 import React from 'react';
 import logExpensesImage from '../../assets/plus-regular.svg';
-import exitButtonImage from '../../assets/circle-xmark-light.svg';
 import styles from './LogExpenses.module.css';
 import {useState, useRef} from 'react';
 import ReusableButton from '../ReusableButton/ReusableButton';
+import ExitButton from '../ExitButton/ExitButton';
 
 const LogExpenses = ({subtractFromBudget}) => {
 	const [isLogExpensesOpen, setIsLogExpensesOpen] = useState(false);
@@ -59,18 +59,9 @@ const LogExpenses = ({subtractFromBudget}) => {
 					ref={expenseForm}
 				>
 					<div className={styles.form_elements_container}>
-						<div className={styles.expenses_header}>
-							<button
-								className={styles.exit_set_budget_button}
-								onClick={toggleExpenses}
-							>
-								<img
-									src={exitButtonImage}
-									alt='Exit Button'
-									className={styles.exit_button_image}
-								/>
-							</button>
-						</div>
+						<header className={styles.expenses_header}>
+							<ExitButton onClick={toggleExpenses} />
+						</header>
 						<div className={styles.expense_form_element}>
 							<label htmlFor='title'>
 								<b>What</b> should your expense be called?

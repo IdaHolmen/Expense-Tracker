@@ -7,6 +7,7 @@ import EarlierExpenses from '../EarlierExpenses/EarlierExpenses';
 
 function App() {
 	const [budgetAmount, setBudgetAmount] = useState(0);
+	const [expenseList, setExpenseList] = useState([]);
 
 	const addToBudget = (amount) => {
 		setBudgetAmount(budgetAmount + amount);
@@ -25,7 +26,7 @@ function App() {
 			<section className={styles.navigation_button_container}>
 				<SetBudget updateBudgetAmount={addToBudget} />
 				<LogExpenses subtractFromBudget={subtractFromBudget} />
-				<EarlierExpenses />
+				<EarlierExpenses expenseList={expenseList} />
 			</section>
 		</main>
 	);

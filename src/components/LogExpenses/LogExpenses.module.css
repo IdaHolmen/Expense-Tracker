@@ -52,19 +52,6 @@
 	align-items: center;
 }
 
-.exit_button_image {
-	width: 2rem;
-	height: 2rem;
-	margin: 0.5rem;
-	transition: background-color 0.2s ease;
-	border-radius: 50%;
-}
-
-.exit_button_image:hover {
-	background-color: #c04c4c75;
-	border-radius: 50%;
-}
-
 .expense_form_element {
 	flex-basis: 18%;
 	display: flex;
