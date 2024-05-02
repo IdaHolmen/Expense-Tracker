@@ -5,7 +5,7 @@ import styles from './LogExpenses.module.css';
 import {useState, useRef} from 'react';
 import ReusableButton from '../ReusableButton/ReusableButton';
 
-const LogExpenses = () => {
+const LogExpenses = ({subtractFromBudget}) => {
 	const [isLogExpensesOpen, setIsLogExpensesOpen] = useState(false);
 	const [expenseList, setExpenseList] = useState([]);
 	const expenseForm = useRef(null);
@@ -19,11 +19,16 @@ const LogExpenses = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const expenseFormData = new FormData(expenseForm.current);
-		let newExpense = {};
-		newExpense = Object.fromEntries(expenseFormData.entries());
-		setExpenseList((prev) => [...prev, newExpense]);
-		expenseForm.current.reset();
-		toggleExpenses();
+		let newExpense = Object.fromEntries(expenseFormData.entries());
+		const expenseAmount = parseFloat(newExpense.amount);
+		if (!isNaN(expenseAmount)) {
+			setExpenseList((prev) => [...prev, newExpense]);
+			subtractFromBudget(expenseAmount);
+			expenseForm.current.reset();
+			toggleExpenses();
+		} else {
+			console.log('Invalid number');
+		}
 	};
 
 	console.log(expenseList);
