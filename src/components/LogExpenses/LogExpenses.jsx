@@ -22,6 +22,7 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 		e.preventDefault();
 		const expenseFormData = new FormData(expenseForm.current);
 		let newExpense = Object.fromEntries(expenseFormData.entries());
+		newExpense.index = new Date(Date.now()).toISOString();
 		const expenseAmount = parseFloat(newExpense.amount);
 		if (!isNaN(expenseAmount)) {
 			setExpenseList((prev) => [...prev, newExpense]);
@@ -66,6 +67,7 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 						<header className={styles.expenses_header}>
 							<ExitButton onClick={toggleExpenses} />
 						</header>
+
 						<div className={styles.expense_form_element}>
 							<label htmlFor='title'>
 								<b>What</b> should your expense be called?

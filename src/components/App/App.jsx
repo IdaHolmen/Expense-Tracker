@@ -46,7 +46,10 @@ function App() {
 					subtractFromBudget={subtractFromBudget}
 					updateExpenseList={updateExpenseList}
 				/>
-				<EarlierExpenses expenseList={expenseList} />
+				<EarlierExpenses
+					expenseList={expenseList}
+					setExpenseList={setExpenseList}
+				/>
 			</section>
 		</main>
 	);

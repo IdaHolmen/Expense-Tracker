@@ -5,11 +5,16 @@ import styles from './EarlierExpenses.module.css';
 import {useState} from 'react';
 import ExitButton from '../ExitButton/ExitButton';
 
-const EarlierExpenses = ({expenseList}) => {
+const EarlierExpenses = ({expenseList, setExpenseList}) => {
 	const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 
 	const toggleHistory = () => {
 		setIsHistoryOpen(!isHistoryOpen);
+	};
+
+	const handleDelete = (index) => {
+		const updateExpenseList = expenseList.filter((expense, i) => i !== index);
+		setExpenseList(updateExpenseList);
 	};
 
 	return (
