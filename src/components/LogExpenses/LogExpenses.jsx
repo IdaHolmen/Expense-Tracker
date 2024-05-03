@@ -5,17 +5,19 @@ import {useState, useRef} from 'react';
 import ReusableButton from '../ReusableButton/ReusableButton';
 import ExitButton from '../ExitButton/ExitButton';
 
-const LogExpenses = ({subtractFromBudget}) => {
+const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 	const [isLogExpensesOpen, setIsLogExpensesOpen] = useState(false);
 	const [expenseList, setExpenseList] = useState([]);
 	const expenseForm = useRef(null);
 
 	const [errorMessages, setErrorMessages] = useState({});
 
+	// TOGGLING THE EXPENSE MODULE OPEN AND CLOSED
 	const toggleExpenses = () => {
 		setIsLogExpensesOpen(!isLogExpensesOpen);
 	};
 
+	// HANDLING THE SUBMIT, SUBTRACTING FROM OVERALL BUDGET, AND STORING THE DATA IN AN ARRAY
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const expenseFormData = new FormData(expenseForm.current);
@@ -26,6 +28,7 @@ const LogExpenses = ({subtractFromBudget}) => {
 			subtractFromBudget(expenseAmount);
 			expenseForm.current.reset();
 			toggleExpenses();
+			updateExpenseList(newExpense);
 		} else {
 			console.log('Invalid number');
 		}
@@ -33,6 +36,7 @@ const LogExpenses = ({subtractFromBudget}) => {
 
 	console.log(expenseList);
 
+	// FORM VALIDATION
 	const validateInput = (inputName, inputValue) => {
 		const clonedErrors = {...errorMessages};
 

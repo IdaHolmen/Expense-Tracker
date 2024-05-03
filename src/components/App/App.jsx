@@ -17,6 +17,10 @@ function App() {
 		setBudgetAmount(budgetAmount - amount);
 	};
 
+	const updateExpenseList = (newExpense) => {
+		setExpenseList((prevExpenseList) => [...prevExpenseList, newExpense]);
+	};
+
 	return (
 		<main className={styles.main_container}>
 			<section className={styles.budget_container}>
@@ -25,7 +29,10 @@ function App() {
 
 			<section className={styles.navigation_button_container}>
 				<SetBudget updateBudgetAmount={addToBudget} />
-				<LogExpenses subtractFromBudget={subtractFromBudget} />
+				<LogExpenses
+					subtractFromBudget={subtractFromBudget}
+					updateExpenseList={updateExpenseList}
+				/>
 				<EarlierExpenses expenseList={expenseList} />
 			</section>
 		</main>

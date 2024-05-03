@@ -1,12 +1,12 @@
 .exit_button_image {
-	width: 2rem;
-	height: 2rem;
-	margin: 0.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	transition: background-color 0.2s ease;
 	border-radius: 50%;
+	transition: 0.3s;
 }
 
 .exit_button_image:hover {
-	background-color: #c04c4c75;
-	border-radius: 50%;
+	transform: scale(1.2);
+	transition: 0.2s;
 }

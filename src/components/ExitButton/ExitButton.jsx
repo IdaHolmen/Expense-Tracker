@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ExitButton.module.css';
-import exitButtonImage from '../../assets/circle-xmark-light.svg';
+import exitButtonImage from '../../assets/xmark-light.svg';
 
 const ExitButton = ({onClick}) => {
 	return (

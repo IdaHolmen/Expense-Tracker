@@ -26,7 +26,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background-color: white;
 	display: flex;
 	justify-content: center;
@@ -34,6 +34,7 @@
 }
 
 .expense_history_container {
+	position: relative;
 	width: 95%;
 	height: 95%;
 	border: 2px solid #f48241;
@@ -45,24 +46,81 @@
 }
 
 .expense_history_header {
-	width: 100%;
+	width: 90%;
+	height: 10vh;
 	flex-basis: 10%;
 	display: flex;
-	justify-content: end;
+	justify-content: center;
 	align-items: center;
+}
+
+.headline {
+	flex-grow: 1;
+	text-align: center;
+	margin-left: 2rem;
 }
 
 .expense_history_list {
 	flex-basis: 90%;
 	width: 90%;
+	height: 100vh;
+	overflow-y: auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	margin: 1rem;
+	list-style: none;
 }
 
-.list_item {
+.list {
 	width: 100%;
 	height: 8rem;
+	background-color: white;
+	margin-bottom: 1rem;
+	border: 0.5px solid grey;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.list:hover {
+	border: 1px solid #f48241;
+}
+
+.list_elements {
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.delete_button_container {
+	flex-basis: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.delete_button {
+	display: flex;
+	align-items: center;
+	padding: 0.3rem;
+	border-radius: 5px;
 	border: 2px solid red;
+	color: red;
+}
+
+.delete_image {
+	width: 1rem;
+	margin-left: 0.3rem;
+}
+
+.delete_button:hover {
+	background-color: rgba(252, 161, 161, 0.48);
+}
+
+.no_content {
+	margin-top: 10rem;
+	font-weight: bold;
+	color: brown;
 }
