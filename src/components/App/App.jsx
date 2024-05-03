@@ -11,14 +11,27 @@ function App() {
 
 	const addToBudget = (amount) => {
 		setBudgetAmount(budgetAmount + amount);
+		changeHeader(budgetAmount + amount);
 	};
 
 	const subtractFromBudget = (amount) => {
 		setBudgetAmount(budgetAmount - amount);
+		changeHeader(budgetAmount - amount);
 	};
 
 	const updateExpenseList = (newExpense) => {
 		setExpenseList((prevExpenseList) => [...prevExpenseList, newExpense]);
+	};
+
+	const changeHeader = (amount) => {
+		const budgetContainer = document.querySelector(
+			`.${styles.budget_container}`
+		);
+		if (amount < 0) {
+			budgetContainer.classList.add(styles.negative_budget);
+		} else {
+			budgetContainer.classList.remove(styles.negative_budget);
+		}
 	};
 
 	return (

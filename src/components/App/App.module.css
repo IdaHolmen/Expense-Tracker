@@ -14,6 +14,13 @@
 	padding: 1rem;
 }
 
+.negative_budget {
+	background-color: #df4a4a;
+	width: 100%;
+	flex-basis: 25%;
+	padding: 1rem;
+}
+
 .header {
 	margin: 2rem;
 	font-size: 1.4rem;
