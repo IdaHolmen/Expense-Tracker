@@ -17,7 +17,7 @@
 }
 
 .earlier_expenses_button:hover {
-	color: #6dbe6c;
+	color: #f48241;
 	font-weight: bold;
 }
 
@@ -89,38 +89,43 @@
 }
 
 .list_elements {
-	flex-basis: 50%;
+	flex-basis: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 
 .delete_button_container {
-	flex-basis: 50%;
+	flex-basis: 10%;
 	display: flex;
 	justify-content: flex-end;
 }
 
 .delete_button {
-	display: flex;
-	align-items: center;
-	padding: 0.3rem;
-	border-radius: 5px;
-	border: 2px solid red;
-	color: red;
+	transition: 0.2s;
 }
 
 .delete_image {
 	width: 1rem;
-	margin-left: 0.3rem;
 }
 
 .delete_button:hover {
-	background-color: rgba(252, 161, 161, 0.48);
+	transform: scale(1.2);
+	transition: 0.2s;
 }
 
 .no_content {
 	margin-top: 10rem;
 	font-weight: bold;
 	color: brown;
+}
+
+@media screen and (min-width: 1000px) {
+	.list_elements {
+		flex-direction: row;
+	}
+
+	.list_element {
+		flex-basis: 25%;
+	}
 }

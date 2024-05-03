@@ -17,7 +17,7 @@
 }
 
 .set_budget_button:hover {
-	color: #6dbe6c;
+	color: #6589aa;
 	font-weight: bold;
 }
 
@@ -27,7 +27,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -35,16 +35,16 @@
 }
 
 .set_budget_form {
-	height: 50%;
+	height: 95%;
 	width: 95%;
-	background-color: white;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	border: 2px solid #6589aa;
 	display: flex;
 	flex-direction: column;
 }
 
 .set_budget_header {
+	width: 95%;
 	flex-basis: 10%;
 	display: flex;
 	justify-content: end;
@@ -76,7 +76,7 @@
 }
 
 .set_budget_main input {
-	width: 80%;
+	width: 40%;
 	margin: 0 auto;
 	padding-left: 0.3rem;
 }

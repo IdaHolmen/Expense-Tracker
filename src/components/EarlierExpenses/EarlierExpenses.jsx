@@ -43,17 +43,24 @@ const EarlierExpenses = ({expenseList}) => {
 								{expenseList.map((expense, index) => (
 									<li key={index} className={styles.list}>
 										<div className={styles.list_elements}>
-											<span>Title: {expense.title}</span>
-											<span>Amount: {expense.amount}$</span>
-											<span>Date: {expense.date}</span>
-											<span>Category: {expense.category}</span>
+											<span className={styles.list_element}>
+												Date: {expense.date}
+											</span>
+											<span className={styles.list_element}>
+												Title: {expense.title}
+											</span>
+											<span className={styles.list_element}>
+												Amount: {expense.amount}$
+											</span>
+											<span className={styles.list_element}>
+												Category: {expense.category}
+											</span>
 										</div>
 										<div className={styles.delete_button_container}>
 											<button
 												className={styles.delete_button}
 												onClick={() => handleDelete(index)}
 											>
-												Delete
 												<img
 													src={deleteImage}
 													alt='Trash can image'
