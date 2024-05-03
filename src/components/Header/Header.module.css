@@ -1,14 +1,25 @@
 .header {
-	margin: 2rem;
+	margin: 1rem;
 	font-size: 1.4rem;
+}
+
+.headline {
+	font-weight: 100;
+	font-size: 2rem;
 }
 
 .balance {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .header_icon {
 	font-size: 3.5rem;
+}
+
+@media screen and (min-width: 800px) {
+	.headline {
+		font-size: 3rem;
+	}
 }

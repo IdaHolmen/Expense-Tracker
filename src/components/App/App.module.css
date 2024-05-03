@@ -5,19 +5,24 @@
 	flex-direction: column;
 	text-align: center;
 	position: relative;
+	background-color: #fffff8;
 }
 
 .budget_container {
-	background-color: #6dbe6c;
+	background-color: #426c3c;
+	color: #fffff8;
+	border-radius: 0 0 15px 15px;
 	width: 100%;
-	flex-basis: 25%;
+	flex-basis: 20%;
 	padding: 1rem;
 }
 
 .negative_budget {
-	background-color: #df4a4a;
+	background-color: #740f0f;
+	color: #fffff8;
+	border-radius: 0 0 15px 15px;
 	width: 100%;
-	flex-basis: 25%;
+	flex-basis: 20%;
 	padding: 1rem;
 }
 
@@ -37,11 +42,12 @@
 }
 
 .navigation_button_container {
-	flex-basis: 75%;
+	flex-basis: 80%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	font-weight: 100;
 }
 
 .set_budget_container {

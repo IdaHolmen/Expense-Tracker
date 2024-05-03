@@ -3,14 +3,14 @@
 	height: 2rem;
 	font-weight: bold;
 	color: white;
-	background-color: #9747ff;
+	background-color: #384872;
 	border-radius: 15px;
 }
 
 .reusable_button:hover {
-	background-color: #b47aff;
+	background-color: #4f97d9;
 }
 
 .reusable_button:active {
-	background-color: #6029a9;
+	background-color: #7994ae;
 }

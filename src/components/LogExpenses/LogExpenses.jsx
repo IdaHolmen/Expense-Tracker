@@ -94,16 +94,16 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 								<b>Which</b> category is the expense under?
 							</label>
 							<select name='category'>
-								<option value='housing'>Housing 🏠</option>
-								<option value='groceries'>Groceries 🍴</option>
-								<option value='transportation'>Transportation 🚲</option>
-								<option value='clothing'>Clothing 👕</option>
-								<option value='other'>Other 💃</option>
+								<option value='-'>None</option>
+								<option value='Housing'>Housing 🏠</option>
+								<option value='Groceries'>Groceries 🍴</option>
+								<option value='Transportation'>Transportation 🚲</option>
+								<option value='Clothing'>Clothing 👕</option>
+								<option value='Other'>Other 💃</option>
 							</select>
 						</div>
 						<div className={styles.expense_form_element}>
 							<ReusableButton buttonText={'Add Expense'} type='submit' />
-							<p>Expense added! ✅</p>
 						</div>
 					</div>
 				</form>

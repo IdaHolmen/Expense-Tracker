@@ -49,16 +49,16 @@ const EarlierExpenses = ({expenseList, setExpenseList}) => {
 									<li key={index} className={styles.list}>
 										<div className={styles.list_elements}>
 											<span className={styles.list_element}>
-												Date: {expense.date}
+												<b>Date:</b> {expense.date}
 											</span>
 											<span className={styles.list_element}>
-												Title: {expense.title}
+												<b>Title:</b> {expense.title}
 											</span>
 											<span className={styles.list_element}>
-												Amount: {expense.amount}$
+												<b>Amount:</b> {expense.amount}$
 											</span>
 											<span className={styles.list_element}>
-												Category: {expense.category}
+												<b>Category:</b> {expense.category}
 											</span>
 										</div>
 										<div className={styles.delete_button_container}>
