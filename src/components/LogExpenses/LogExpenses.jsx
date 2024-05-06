@@ -1,7 +1,7 @@
 import React from 'react';
 import logExpensesImage from '../../assets/plus-regular.svg';
 import styles from './LogExpenses.module.css';
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import ReusableButton from '../ReusableButton/ReusableButton';
 import ExitButton from '../ExitButton/ExitButton';
 
@@ -85,6 +85,18 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 			}
 		}
 	};
+
+	// ADDING TO LOCAL STORAGE
+	useEffect(() => {
+		localStorage.setItem('expenses', JSON.stringify(expenseList));
+	}, [expenseList]);
+
+	useEffect(() => {
+		const expenses = JSON.parse(localStorage.getItem('expenses'));
+		if (expenses) {
+			setExpenseList(expenses);
+		}
+	}, []);
 
 	return (
 		<>

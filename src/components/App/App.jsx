@@ -26,6 +26,17 @@ function App() {
 		setExpenseList((prevExpenseList) => [...prevExpenseList, newExpense]);
 	};
 
+	// DELETE EXPENSE AND UPDATE BUDGET
+	const updateBudgetWhenDeleted = (deletedAmount) => {
+		const amountToAdd = parseFloat(deletedAmount);
+		setBudgetAmount(budgetAmount + amountToAdd);
+
+		// MAKING SURE THAT THE HEADER GOES BACK TO GREEN IF IT REACHES ZERO
+		if (budgetAmount + amountToAdd === 0) {
+			changeHeader(0);
+		}
+	};
+
 	// CHANGING HEADER COLOR IF WE REACH NEGATIVE NUMBER
 	const changeHeader = (amount) => {
 		const budgetContainer = document.querySelector(
@@ -53,6 +64,8 @@ function App() {
 				<EarlierExpenses
 					expenseList={expenseList}
 					setExpenseList={setExpenseList}
+					updateBudgetWhenDeleted={updateBudgetWhenDeleted}
+					amount={budgetAmount}
 				/>
 			</section>
 		</main>

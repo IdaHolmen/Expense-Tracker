@@ -5,7 +5,12 @@ import styles from './EarlierExpenses.module.css';
 import {useState, useEffect} from 'react';
 import ExitButton from '../ExitButton/ExitButton';
 
-const EarlierExpenses = ({expenseList, setExpenseList}) => {
+const EarlierExpenses = ({
+	expenseList,
+	setExpenseList,
+	updateBudgetWhenDeleted,
+	amount,
+}) => {
 	const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 	const [totalSum, setTotalSum] = useState(0);
 
@@ -16,8 +21,15 @@ const EarlierExpenses = ({expenseList, setExpenseList}) => {
 
 	// DELETE METHOD FOR THE EXPENSES
 	const handleDelete = (index) => {
-		const updateExpenseList = expenseList.filter((expense, i) => i !== index);
-		setExpenseList(updateExpenseList);
+		//REMOVING FROM RENDERED LIST AND LOCAL STORAGE
+		const updatedList = expenseList.filter((expense, i) => i !== index);
+		localStorage.setItem('expenses', JSON.stringify(updatedList));
+		setExpenseList(updatedList);
+		console.log('Deleting expense at index:', index);
+		//UPDATING THE BUDGET AMOUNT SO IT MATCHES WITH THE EXPENSE LIST
+		const deletedAmount = expenseList[index].amount;
+		console.log('Deleted amount:', deletedAmount);
+		updateBudgetWhenDeleted(deletedAmount);
 	};
 
 	// METHOD FOR SUMMING UP ALL THE EXPENSES
