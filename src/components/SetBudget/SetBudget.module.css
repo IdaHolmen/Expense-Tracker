@@ -70,6 +70,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .set_budget_label {
@@ -83,7 +84,16 @@
 	padding-left: 0.3rem;
 }
 
+.error_message {
+	margin: 1rem;
+	color: red;
+}
+
 @media screen and (min-width: 1000px) {
+	.set_budget_label {
+		font-size: 1.3rem;
+	}
+
 	.set_budget_main input {
 		width: 20rem;
 	}

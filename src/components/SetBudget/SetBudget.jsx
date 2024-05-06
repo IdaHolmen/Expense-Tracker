@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import setBudgetImage from '../../assets/hand-holding-dollar-light.svg';
 import styles from './SetBudget.module.css';
 import ReusableButton from '../ReusableButton/ReusableButton';
@@ -7,19 +7,40 @@ import ExitButton from '../ExitButton/ExitButton';
 const SetBudget = ({updateBudgetAmount}) => {
 	const [isSetBudgetOpen, setIsSetBudgetOpen] = useState(false);
 	const [inputValue, setInputValue] = useState('');
+	const [errorMessage, setErrorMessage] = useState({});
 
+	// TOGGLING IF BUDGET IS OPEN OR NOT
 	const toggleSetBudget = () => {
 		setIsSetBudgetOpen(!isSetBudgetOpen);
 	};
 
+	// TRACKING THE INPUT VALUE
 	const handleAmountChange = (e) => {
 		setInputValue(e.target.value);
+		validateInput(inputValue);
 	};
 
+	// RUN validateInput WHENEVER inputValue CHANGES
+	useEffect(() => {
+		validateInput(inputValue);
+	}, [inputValue]);
+
+	// VALIDATING THE INPUT ELEMENT
+	const validateInput = (inputValue) => {
+		const clonedError = {...errorMessage};
+
+		if (isNaN(inputValue)) {
+			clonedError.numberError = 'Input value must be a number!';
+		} else {
+			clonedError.numberError = '';
+		}
+		setErrorMessage(clonedError);
+	};
+
+	// ADDING THE SUM FROM THE INPUT TO THE BUDGET, CLEARING FORM AND CLOSING MODULE
 	const addToBudget = (e) => {
 		e.preventDefault();
 		const addedAmount = parseFloat(inputValue);
-		console.log({addedAmount});
 		if (!isNaN(addedAmount)) {
 			updateBudgetAmount(addedAmount);
 			setInputValue('');
@@ -48,13 +69,14 @@ const SetBudget = ({updateBudgetAmount}) => {
 						</div>
 						<div className={styles.set_budget_main}>
 							<label htmlFor='amount' className={styles.set_budget_label}>
-								How much would you like to add to your budget?
+								<b>How much</b> would you like to add to your budget?
 							</label>
 							<input
 								type='text'
 								value={inputValue}
 								onChange={handleAmountChange}
 							/>
+							<p className={styles.error_message}>{errorMessage.numberError}</p>
 						</div>
 						<div className={styles.set_budget_add_container}>
 							<ReusableButton buttonText='Add to budget' type='submit' />
