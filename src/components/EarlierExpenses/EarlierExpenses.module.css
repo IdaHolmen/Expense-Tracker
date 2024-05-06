@@ -58,7 +58,12 @@
 	flex-grow: 1;
 	text-align: center;
 	margin-left: 2rem;
-	color: grey;
+	color: black;
+}
+
+.headline h1 {
+	font-weight: 100;
+	font-size: 2rem;
 }
 
 .expense_history_list {
@@ -73,7 +78,7 @@
 
 .list {
 	width: 100%;
-	height: 8rem;
+	min-height: 8rem;
 	background-color: white;
 	margin-bottom: 1rem;
 	border: 0.5px solid grey;
