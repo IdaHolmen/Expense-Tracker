@@ -2,20 +2,32 @@ import React from 'react';
 import earlierExpensesImage from '../../assets/list-regular.svg';
 import deleteImage from '../../assets/trash-sharp-regular.svg';
 import styles from './EarlierExpenses.module.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import ExitButton from '../ExitButton/ExitButton';
 
 const EarlierExpenses = ({expenseList, setExpenseList}) => {
 	const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+	const [totalSum, setTotalSum] = useState(0);
 
+	// TOGGLING EXPENSE HISTORY OPEN AND CLOSED
 	const toggleHistory = () => {
 		setIsHistoryOpen(!isHistoryOpen);
 	};
 
+	// DELETE METHOD FOR THE EXPENSES
 	const handleDelete = (index) => {
 		const updateExpenseList = expenseList.filter((expense, i) => i !== index);
 		setExpenseList(updateExpenseList);
 	};
+
+	// METHOD FOR SUMMING UP ALL THE EXPENSES
+	useEffect(() => {
+		const sum = expenseList.reduce(
+			(acc, expense) => acc + parseFloat(expense.amount),
+			0
+		);
+		setTotalSum(sum);
+	}, [expenseList]);
 
 	return (
 		<>
@@ -49,10 +61,10 @@ const EarlierExpenses = ({expenseList, setExpenseList}) => {
 									<li key={index} className={styles.list}>
 										<div className={styles.list_elements}>
 											<span className={styles.list_element}>
-												<b>Date:</b> {expense.date}
+												<b>Title:</b> {expense.title}
 											</span>
 											<span className={styles.list_element}>
-												<b>Title:</b> {expense.title}
+												<b>Date:</b> {expense.date}
 											</span>
 											<span className={styles.list_element}>
 												<b>Amount:</b> {expense.amount}$
@@ -81,6 +93,9 @@ const EarlierExpenses = ({expenseList, setExpenseList}) => {
 								<p className={styles.no_content}>No expenses to show</p>
 							</div>
 						)}
+						<footer className={styles.footer}>
+							<h3>Total sum: ${totalSum}</h3>
+						</footer>
 					</div>
 				</div>
 			)}

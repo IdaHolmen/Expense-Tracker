@@ -9,20 +9,24 @@ function App() {
 	const [budgetAmount, setBudgetAmount] = useState(0);
 	const [expenseList, setExpenseList] = useState([]);
 
+	// ADDING TO BUDGET
 	const addToBudget = (amount) => {
 		setBudgetAmount(budgetAmount + amount);
 		changeHeader(budgetAmount + amount);
 	};
 
+	//SUBTRACTING FROM BUDGET
 	const subtractFromBudget = (amount) => {
 		setBudgetAmount(budgetAmount - amount);
 		changeHeader(budgetAmount - amount);
 	};
 
+	// UPDATING EXPENSE LIST
 	const updateExpenseList = (newExpense) => {
 		setExpenseList((prevExpenseList) => [...prevExpenseList, newExpense]);
 	};
 
+	// CHANGING HEADER COLOR IF WE REACH NEGATIVE NUMBER
 	const changeHeader = (amount) => {
 		const budgetContainer = document.querySelector(
 			`.${styles.budget_container}`

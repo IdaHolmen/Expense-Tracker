@@ -27,7 +27,7 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 		setIsLogExpensesOpen(!isLogExpensesOpen);
 	};
 
-	//
+	// HANDLING THE INPUT CHANGE
 	const handleInputChange = (e) => {
 		const {name, value} = e.target;
 		setFormData({
@@ -36,7 +36,7 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 		});
 	};
 
-	//FORM VALIDATION
+	// FORM VALIDATION
 	const validateInput = () => {
 		const errors = {};
 
