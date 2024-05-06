@@ -64,4 +64,22 @@
 .expense_form_element input {
 	margin: 1rem;
 	padding-left: 0.3rem;
+	width: 15rem;
+	height: 2rem;
+}
+
+.select_element {
+	width: 15rem;
+	height: 2rem;
+	margin: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+	.expense_form_element input {
+		width: 20rem;
+	}
+
+	.select_element {
+		width: 20rem;
+	}
 }

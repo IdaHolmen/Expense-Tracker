@@ -93,7 +93,7 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 							<label htmlFor='category'>
 								<b>Which</b> category is the expense under?
 							</label>
-							<select name='category'>
+							<select name='category' className={styles.select_element}>
 								<option value='-'>None</option>
 								<option value='Housing'>Housing 🏠</option>
 								<option value='Groceries'>Groceries 🍴</option>
