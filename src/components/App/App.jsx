@@ -32,7 +32,7 @@ function App() {
 		setBudgetAmount(budgetAmount + amountToAdd);
 
 		// MAKING SURE THAT THE HEADER GOES BACK TO GREEN IF IT REACHES ZERO
-		if (budgetAmount + amountToAdd === 0) {
+		if (budgetAmount + amountToAdd >= 0) {
 			changeHeader(0);
 		}
 	};

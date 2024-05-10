@@ -74,6 +74,10 @@
 	margin: 1rem;
 }
 
+sup {
+	color: red;
+}
+
 .error {
 	color: red;
 }
