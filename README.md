@@ -12,18 +12,16 @@ The header in this app serves an important function. It shows the user how much 
 Link to GitHub repository:
 https://github.com/IdaHolmen/Expense-Tracker
 
-
+Link to deployed Netlify site:
+https://ephemeral-pony-61a2da.netlify.app/
 
 <img width="1470" alt="Screenshot 2024-05-13 at 08 50 53" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/6cb03a4c-0ea3-4629-b5dc-1523ddcc5061">
 
 Example image with 700$ in added amount to the budget.
 
-
-
 <img width="1470" alt="Screenshot 2024-05-13 at 08 50 24" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/7ba76778-f0bd-4caa-ab76-54974d7937d2">
 
 Example image if the budget were to be exceeded. The header turns red when reaching negative numbers.
-
 
 <img width="1470" alt="Screenshot 2024-05-13 at 08 49 53" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/e2fc453e-bfa3-4299-931c-41620f6da791">
 
