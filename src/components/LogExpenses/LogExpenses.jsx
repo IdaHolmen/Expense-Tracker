@@ -86,18 +86,6 @@ const LogExpenses = ({subtractFromBudget, updateExpenseList}) => {
 		}
 	};
 
-	// ADDING TO LOCAL STORAGE
-	useEffect(() => {
-		localStorage.setItem('expenses', JSON.stringify(expenseList));
-	}, [expenseList]);
-
-	useEffect(() => {
-		const expenses = JSON.parse(localStorage.getItem('expenses'));
-		if (expenses) {
-			setExpenseList(expenses);
-		}
-	}, []);
-
 	return (
 		<>
 			<div className={styles.log_expenses_button_container}>

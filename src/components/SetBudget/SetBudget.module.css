@@ -89,6 +89,27 @@
 	color: red;
 }
 
+.button_container {
+	height: 8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.clear_button {
+	width: 10rem;
+	height: 2rem;
+	font-weight: bold;
+	color: white;
+	background-color: red;
+	border-radius: 15px;
+}
+
+.clear_button:hover {
+	background-color: rgb(236, 106, 106);
+}
+
 @media screen and (min-width: 1000px) {
 	.set_budget_label {
 		font-size: 1.3rem;

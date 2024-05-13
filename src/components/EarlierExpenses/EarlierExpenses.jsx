@@ -21,14 +21,12 @@ const EarlierExpenses = ({
 
 	// DELETE METHOD FOR THE EXPENSES
 	const handleDelete = (index) => {
-		//REMOVING FROM RENDERED LIST AND LOCAL STORAGE
+		//REMOVING FROM RENDERED LIST
 		const updatedList = expenseList.filter((expense, i) => i !== index);
-		localStorage.setItem('expenses', JSON.stringify(updatedList));
 		setExpenseList(updatedList);
-		console.log('Deleting expense at index:', index);
+
 		//UPDATING THE BUDGET AMOUNT SO IT MATCHES WITH THE EXPENSE LIST
 		const deletedAmount = expenseList[index].amount;
-		console.log('Deleted amount:', deletedAmount);
 		updateBudgetWhenDeleted(deletedAmount);
 	};
 

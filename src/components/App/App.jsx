@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import styles from './App.module.css';
 import Header from '../Header/Header';
 import SetBudget from '../SetBudget/SetBudget';
@@ -6,8 +6,25 @@ import LogExpenses from '../LogExpenses/LogExpenses';
 import EarlierExpenses from '../EarlierExpenses/EarlierExpenses';
 
 function App() {
-	const [budgetAmount, setBudgetAmount] = useState(0);
-	const [expenseList, setExpenseList] = useState([]);
+	const [budgetAmount, setBudgetAmount] = useState(() => {
+		const savedBudget = localStorage.getItem('budget');
+		const initialValue = parseFloat(savedBudget);
+		return isNaN(initialValue) ? 0 : initialValue;
+	});
+
+	const [expenseList, setExpenseList] = useState(() => {
+		const savedExpenses = localStorage.getItem('expenses');
+		const initialValue = JSON.parse(savedExpenses);
+		return initialValue || [];
+	});
+
+	const [isBudgetOpen, setIsBudgetOpen] = useState(false);
+
+	// ADDING BUDGET AND EXPENSES TO LOCAL STORAGE
+	useEffect(() => {
+		localStorage.setItem('budget', JSON.stringify(budgetAmount));
+		localStorage.setItem('expenses', JSON.stringify(expenseList));
+	}, [budgetAmount, expenseList]);
 
 	// ADDING TO BUDGET
 	const addToBudget = (amount) => {
@@ -19,6 +36,17 @@ function App() {
 	const subtractFromBudget = (amount) => {
 		setBudgetAmount(budgetAmount - amount);
 		changeHeader(budgetAmount - amount);
+	};
+
+	// CLEARING THE BUDGET
+	const clearBudget = () => {
+		setBudgetAmount(0);
+		setIsBudgetOpen(false);
+	};
+
+	// TOGGLING THE BUDGET
+	const toggleBudget = () => {
+		setIsBudgetOpen(!isBudgetOpen);
 	};
 
 	// UPDATING EXPENSE LIST
@@ -56,7 +84,12 @@ function App() {
 			</section>
 
 			<section className={styles.navigation_button_container}>
-				<SetBudget updateBudgetAmount={addToBudget} />
+				<SetBudget
+					updateBudgetAmount={addToBudget}
+					clearBudget={clearBudget}
+					isBudgetOpen={isBudgetOpen}
+					toggleBudget={toggleBudget}
+				/>
 				<LogExpenses
 					subtractFromBudget={subtractFromBudget}
 					updateExpenseList={updateExpenseList}

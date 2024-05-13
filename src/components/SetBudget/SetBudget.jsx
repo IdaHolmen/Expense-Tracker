@@ -4,15 +4,20 @@ import styles from './SetBudget.module.css';
 import ReusableButton from '../ReusableButton/ReusableButton';
 import ExitButton from '../ExitButton/ExitButton';
 
-const SetBudget = ({updateBudgetAmount}) => {
-	const [isSetBudgetOpen, setIsSetBudgetOpen] = useState(false);
+const SetBudget = ({
+	updateBudgetAmount,
+	clearBudget,
+	isBudgetOpen,
+	toggleBudget,
+}) => {
+	// const [isSetBudgetOpen, setIsSetBudgetOpen] = useState(false);
 	const [inputValue, setInputValue] = useState('');
 	const [errorMessage, setErrorMessage] = useState({});
 
-	// TOGGLING IF BUDGET IS OPEN OR NOT
-	const toggleSetBudget = () => {
-		setIsSetBudgetOpen(!isSetBudgetOpen);
-	};
+	// // TOGGLING IF BUDGET IS OPEN OR NOT
+	// const toggleSetBudget = () => {
+	// 	setIsSetBudgetOpen(!isSetBudgetOpen);
+	// };
 
 	// TRACKING THE INPUT VALUE
 	const handleAmountChange = (e) => {
@@ -44,14 +49,14 @@ const SetBudget = ({updateBudgetAmount}) => {
 		if (!isNaN(addedAmount)) {
 			updateBudgetAmount(addedAmount);
 			setInputValue('');
-			toggleSetBudget();
+			toggleBudget();
 		}
 	};
 
 	return (
 		<>
 			<div className={styles.set_budget_add_container}>
-				<button className={styles.set_budget_button} onClick={toggleSetBudget}>
+				<button className={styles.set_budget_button} onClick={toggleBudget}>
 					<img
 						src={setBudgetImage}
 						className={styles.set_budget_image}
@@ -61,11 +66,11 @@ const SetBudget = ({updateBudgetAmount}) => {
 				</button>
 			</div>
 
-			{isSetBudgetOpen && (
+			{isBudgetOpen && (
 				<form className={styles.set_budget_container} onSubmit={addToBudget}>
 					<div className={styles.set_budget_form}>
 						<div className={styles.set_budget_header}>
-							<ExitButton onClick={toggleSetBudget} />
+							<ExitButton onClick={toggleBudget} />
 						</div>
 						<div className={styles.set_budget_main}>
 							<label htmlFor='amount' className={styles.set_budget_label}>
@@ -78,8 +83,12 @@ const SetBudget = ({updateBudgetAmount}) => {
 							/>
 							<p className={styles.error_message}>{errorMessage.numberError}</p>
 						</div>
-						<div className={styles.set_budget_add_container}>
+						<div className={styles.button_container}>
 							<ReusableButton buttonText='Add to budget' type='submit' />
+							<p>Or</p>
+							<button className={styles.clear_button} onClick={clearBudget}>
+								Clear budget
+							</button>
 						</div>
 					</div>
 				</form>
