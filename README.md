@@ -14,15 +14,17 @@ https://github.com/IdaHolmen/Expense-Tracker
 
 
 
-<img width="320" alt="Screenshot 2024-05-13 at 08 41 25" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/f72df011-e5b5-4ad7-93cf-310c64d07ae8">
+<img width="1470" alt="Screenshot 2024-05-13 at 08 50 53" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/6cb03a4c-0ea3-4629-b5dc-1523ddcc5061">
+
 Example image with 700$ in added amount to the budget.
 
 
 
-<img width="321" alt="Screenshot 2024-05-13 at 08 43 40" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/d633513e-0b58-4668-b2cf-897716694024">
+<img width="1470" alt="Screenshot 2024-05-13 at 08 50 24" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/7ba76778-f0bd-4caa-ab76-54974d7937d2">
+
 Example image if the budget were to be exceeded. The header turns red when reaching negative numbers.
 
 
+<img width="1470" alt="Screenshot 2024-05-13 at 08 49 53" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/e2fc453e-bfa3-4299-931c-41620f6da791">
 
-<img width="215" alt="Screenshot 2024-05-13 at 08 44 58" src="https://github.com/IdaHolmen/Expense-Tracker/assets/143997448/dcb61dc7-bf51-433a-9fbd-9dfb4cd68553">
 The log of earlier expenses with the possibility to delete.
